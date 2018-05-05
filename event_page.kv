@@ -1,0 +1,21 @@
+<EventPage>:
+    FloatLayout:
+        pos_hint:{'x':0,'y':0}
+        size_hint:1,1
+        canvas:
+            Color:
+                rgba: 1,1,1,1
+            Rectangle:
+                pos:self.pos
+                size:self.size
+
+        BoxLayout:
+            pos_hint:{'x':.3, 'y':.5}
+            size_hint:.4,.01
+            spacing:10
+
+            Button:
+                text:'Overview'
+
+            Button:
+                text:'Tasks'
