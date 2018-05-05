@@ -9,13 +9,127 @@
                 pos:self.pos
                 size:self.size
 
-        BoxLayout:
-            pos_hint:{'x':.3, 'y':.5}
-            size_hint:.4,.01
-            spacing:10
+        Button:
+            text:'Overview'
+            pos_hint:{'x':.3,'y':.9}
+            size_hint:.2,.05
+            on_release:carousel_id.load_previous()
 
-            Button:
-                text:'Overview'
+        Button:
+            text:'Tasks'
+            pos_hint:{'x':.5,'y':.9}
+            size_hint:.2,.05
+            on_release:carousel_id.load_next()
 
-            Button:
-                text:'Tasks'
+        Carousel:
+            pos_hint:{'x':0,'y':0}
+            size_hint:1, .85
+            id:carousel_id
+
+            FloatLayout:
+                pos_hint:{'x':0,'y':0}
+                size_hint:1,1
+                canvas:
+                    Color:
+                        rgba: 1,1,1,1
+                    Rectangle:
+                        pos:self.pos
+                        size:self.size
+
+                Label:
+                    id:lbl_tasks_compleated
+                    text: '0'
+                    pos_hint:{'x':.1,'y':.8}
+                    text_size:self.size
+                    font_size: '30sp'
+                    color:0,0,0,.6
+
+                Label:
+                    text:'Tasks\nCompleated'
+                    pos_hint:{'x':.15,'y':.8}
+                    text_size:self.size
+                    color:0,0,0,.6
+
+                Label:
+                    id:lbl_all_tasks
+                    text: '0'
+                    pos_hint:{'x':.3,'y':.8}
+                    text_size:self.size
+                    font_size: '30sp'
+                    color:0,0,0,.6
+
+                Label:
+                    text:'All\nTasks'
+                    pos_hint:{'x':.35,'y':.8}
+                    text_size:self.size
+                    color:0,0,0,.6
+
+                Button:
+                    id:btn_add_avatar
+                    pos_hint:{'x':.45,'y':.75}
+                    size_hint:.1,.2
+                    background_color:1,1,1,0
+                    on_release: root.manager.current='add_project_name'
+                    Image:
+                        source:'images/add.png'
+
+                Label:
+                    id:lbl_team_members
+                    text: '0'
+                    pos_hint:{'x':.6,'y':.8}
+                    text_size:self.size
+                    font_size: '30sp'
+                    color:0,0,0,.6
+
+                Label:
+                    text:'Team\nMembers'
+                    pos_hint:{'x':.65,'y':.8}
+                    text_size:self.size
+                    color:0,0,0,.6
+
+                Label:
+                    id:lbl_all_lists
+                    text: '0'
+                    pos_hint:{'x':.8,'y':.8}
+                    text_size:self.size
+                    font_size: '30sp'
+                    color:0,0,0,.6
+
+                Label:
+                    text:'All\nLists'
+                    pos_hint:{'x':.85,'y':.8}
+                    text_size:self.size
+                    color:0,0,0,.6
+
+
+                FloatLayout:
+                    pos_hint:{'x':.1,'y':.55}
+                    size_hint:.8,.05
+                    canvas:
+                        Color:
+                            rgba: 0,0,0,.15
+                        Rectangle:
+                            pos:self.pos
+                            size:self.size
+                    Label:
+                        text: 'Compleated:'
+                        pos_hint:{'x':.42,'y':0.2}
+                        text_size:self.size
+                        color:0,0,0,.6
+
+                    Label:
+                        id:lbl_compleated_procent
+                        text: '[b]0%[/b]'
+                        pos_hint:{'x':.57,'y':0.2}
+                        text_size:self.size
+                        color:0,0,0,.6
+
+            FloatLayout:
+                pos_hint:{'x':0,'y':0}
+                size_hint:1,1
+                canvas:
+                    Color:
+                        rgba: 1,1,1,1
+                    Rectangle:
+                        pos:self.pos
+                        size:self.size
