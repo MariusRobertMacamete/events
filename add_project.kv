@@ -92,6 +92,7 @@
                     color:0,0,0,0.5
                     background_color:1,1,1,0
                     on_release:
+                        root.ins_event_to_db()
                         root.check_event_name()
                         if error_event.text=='correct':root.manager.current='event_page_name'
                         else: root.restat_gui()

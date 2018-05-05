@@ -4,10 +4,12 @@ from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 from kivy.properties import ObjectProperty
 from kivy.lang import Builder
-import sqlite3
+
+from db_actions import DbConnect
 
 Builder.load_file('add_project.kv')
 Builder.load_file('event_page.kv')
+
 
 class AddProject(Screen):
     def check_event_name(self):
@@ -21,6 +23,12 @@ class AddProject(Screen):
         self.ids.txt_description.text=''
         self.ids.btn_create_event.color=0,0,0,0.5
 
+    def ins_event_to_db(self):
+        n=self.ids.txt_event_name.text
+        d=self.ids.txt_description.text
+        ins=DbConnect()
+        ins.create_event_table()
+        ins.insert_event(n,d)
 
 class EventPage(Screen):
     pass
