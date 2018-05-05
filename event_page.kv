@@ -124,7 +124,92 @@
                         text_size:self.size
                         color:0,0,0,.6
 
-            FloatLayout:
+                Button: #===========================================
+                    id:btn_add_team_members
+                    pos_hint:{'x':.1,'y':.1}
+                    size_hint:.15,.1
+                    on_release: root.manager.current='add_project_name'
+                    background_normal:'images/textinput.png'
+                    background_down:'images/textinput.png'
+
+                Button:
+                    pos_hint:{'x':.1,'y':.1}
+                    size_hint:.05,.1
+                    background_color:1,1,1,0
+                    Image:
+                        source:'images/profile_icon.png'
+
+                Label:
+                    text:'Add Team\nMembers'
+                    pos_hint:{'x':.16,'y':.11}
+                    text_size:self.size
+                    color:0,0,0,.75
+
+
+                Button: #===========================================
+                    id:btn_event_settings
+                    pos_hint:{'x':.315,'y':.1}
+                    size_hint:.15,.1
+                    on_release: root.manager.current='add_project_name'
+                    background_normal:'images/textinput.png'
+                    background_down:'images/textinput.png'
+
+                Button:
+                    pos_hint:{'x':.315,'y':.1}
+                    size_hint:.05,.1
+                    background_color:1,1,1,0
+                    Image:
+                        source:'images/settings.png'
+
+                Label:
+                    text:'Add Event\nSettings'
+                    pos_hint:{'x':.38,'y':.11}
+                    text_size:self.size
+                    color:0,0,0,.75
+
+                Button: #===========================================
+                    id:btn_event_info
+                    pos_hint:{'x':.53,'y':.1}
+                    size_hint:.15,.1
+                    on_release: root.manager.current='add_project_name'
+                    background_normal:'images/textinput.png'
+                    background_down:'images/textinput.png'
+
+                Button:
+                    pos_hint:{'x':.53,'y':.1}
+                    size_hint:.05,.1
+                    background_color:1,1,1,0
+                    Image:
+                        source:'images/info.png'
+
+                Label:
+                    text:'Add Event\nInformation'
+                    pos_hint:{'x':.59,'y':.11}
+                    text_size:self.size
+                    color:0,0,0,.75
+
+                Button: #===========================================
+                    id:btn_event_report
+                    pos_hint:{'x':.75,'y':.1}
+                    size_hint:.15,.1
+                    on_release: root.manager.current='add_project_name'
+                    background_normal:'images/textinput.png'
+                    background_down:'images/textinput.png'
+
+                Button:
+                    pos_hint:{'x':.75,'y':.1}
+                    size_hint:.05,.1
+                    background_color:1,1,1,0
+                    Image:
+                        source:'images/report.png'
+
+                Label:
+                    text:'Event\nReports'
+                    pos_hint:{'x':.81,'y':.11}
+                    text_size:self.size
+                    color:0,0,0,.75
+
+            FloatLayout: #=====================
                 pos_hint:{'x':0,'y':0}
                 size_hint:1,1
                 canvas:
