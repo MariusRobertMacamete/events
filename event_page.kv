@@ -209,7 +209,7 @@
                     text_size:self.size
                     color:0,0,0,.75
 
-            FloatLayout: #=====================
+            FloatLayout: #=======================================================================
                 pos_hint:{'x':0,'y':0}
                 size_hint:1,1
                 canvas:
@@ -218,3 +218,172 @@
                     Rectangle:
                         pos:self.pos
                         size:self.size
+
+                FloatLayout:
+                    pos_hint:{'x':.298,'y':.05}
+                    size_hint:.001, .9
+                    canvas:
+                        Color:
+                            rgba:0,0,0,.5
+                        Rectangle:
+                            pos:self.pos
+                            size:self.size
+
+                Label:
+                    text:'Add a new task'
+                    pos_hint:{'x':.05,'y':.9,}
+                    text_size:self.size
+                    color:0,0,0,.75
+                    font_size: '20sp'
+
+                Button: #===========================================
+                    id:btn_add_dev_list
+                    pos_hint:{'x':.05,'y':.75}
+                    size_hint:.2,.1
+                    on_release:
+                        dev.pos_hint={'x':.3,'y':.05}
+                        nice_to_have.pos_hint={'x':3,'y':.05}
+                        bugs.pos_hint={'x':3,'y':.05}
+                    background_normal:'images/textinput.png'
+                    background_down:'images/textinput.png'
+
+                Button:
+                    pos_hint:{'x':.05,'y':.75}
+                    size_hint:.05,.1
+                    background_color:1,1,1,0
+                    Image:
+                        source:'images/dev.png'
+
+                Label:
+                    pos_hint:{'x':.12,'y':.78}
+                    text_size:self.size
+                    color:0,0,0,.75
+                    text:'Developer'
+
+                Button: #===========================================
+                    id:btn_add_nice_to_have_list
+                    pos_hint:{'x':.05,'y':.6}
+                    size_hint:.2,.1
+                    on_release:
+                        dev.pos_hint={'x':3,'y':.05}
+                        nice_to_have.pos_hint={'x':.3,'y':.05}
+                        bugs.pos_hint={'x':3,'y':.05}
+                    background_normal:'images/textinput.png'
+                    background_down:'images/textinput.png'
+
+                Button:
+                    pos_hint:{'x':.05,'y':.6}
+                    size_hint:.05,.1
+                    background_color:1,1,1,0
+                    Image:
+                        source:'images/star.png'
+
+                Label:
+                    pos_hint:{'x':.12,'y':.63}
+                    text_size:self.size
+                    color:0,0,0,.75
+                    text:'Nice to have'
+
+                Button: #===========================================
+                    id:btn_add_bug_list
+                    pos_hint:{'x':.05,'y':.45}
+                    size_hint:.2,.1
+                    on_release:
+                        dev.pos_hint={'x':3,'y':.05}
+                        nice_to_have.pos_hint={'x':3,'y':.05}
+                        bugs.pos_hint={'x':.3,'y':.05}
+                    background_normal:'images/textinput.png'
+                    background_down:'images/textinput.png'
+
+                Button:
+                    pos_hint:{'x':.05,'y':.45}
+                    size_hint:.05,.1
+                    background_color:1,1,1,0
+                    Image:
+                        source:'images/bug.png'
+
+                Label:
+                    pos_hint:{'x':.12,'y':.48}
+                    text_size:self.size
+                    color:0,0,0,.75
+                    text:'Bugs'
+
+                Button:
+                    pos_hint:{'x':.45,'y':.55}
+                    size_hint:.05,.1
+                    background_color:0,0,0,0
+                    Image:
+                        source:'images/alert.png'
+
+                Label:
+                    pos_hint:{'x':.515,'y':.57}
+                    text_size:self.size
+                    color:0,0,0,.75
+                    text:'Please select a list'
+                    font_size:'25sp'
+
+                #======== dev list =============
+                FloatLayout:
+                    id:dev
+                    pos_hint:{'x':3,'y':.05}
+                    size_hint:.65,.9
+                    canvas:
+                        Color:
+                            rgba:1,1,1,1
+                        Rectangle:
+                            pos:self.pos
+                            size:self.size
+
+                    FloatLayout:
+                        pos_hint:{'x':.05,'y':.5}
+                        size_hint:.9,.0015
+                        canvas:
+                            Color:
+                                rgba:0,0,0,.5
+                            Rectangle:
+                                pos:self.pos
+                                size:self.size
+
+                    Button:
+                        pos_hint:{'x':.05,'y':.95}
+                        size_hint:.05,.1
+                        background_color:0,0,0,0
+                        Image:
+                            source:'images/dev.png'
+
+                    TextInput:
+                        pos_hint:{'x':.15,'y':.97}
+                        size_hint:.5, .05
+                        hint_text:'Title'
+                        #on_text_validate: btn_create_event.focus=True
+
+                    Button:
+                        pos_hint:{'x':.7,'y':.93}
+                        size_hint:.075,.15
+                        background_color:0,0,0,0
+                        Image:
+                            source:'images/plus.png'
+
+                #======== nice to have list =============
+                FloatLayout:
+                    id:nice_to_have
+                    pos_hint:{'x':3,'y':.05}
+                    size_hint:.65,.9
+                    canvas:
+                        Color:
+                            rgba:1,0,1,1
+                        Rectangle:
+                            pos:self.pos
+                            size:self.size
+
+                #======== bug list =============
+                FloatLayout:
+                    id:bugs
+                    pos_hint:{'x':3,'y':.05}
+                    size_hint:.65,.9
+                    canvas:
+                        Color:
+                            rgba:1,1,0,1
+                        Rectangle:
+                            pos:self.pos
+                            size:self.size
